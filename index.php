@@ -11,35 +11,16 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Vlastné štýly -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Navigácia -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="../index.html">
-        <img src="../img/logo.png" alt="Logo stránky" width="40" height="40" class="me-2">
-        <span>Parkour & Freerunning</span>
-      </a>
-
-      <button class="navbar-toggler" type="button"
-              data-bs-toggle="collapse" data-bs-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Prepínač navigácie">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../index.html">Domov</a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="../o_nas.html">O nás</a></li>
-          <li class="nav-item"><a class="nav-link" href="../gallery.html">Galéria</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contacts.html">Kontakt</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <?php
+  $file_path = "parts/header.php"; 
+  if(!include($file_path)) {
+    echo"Failed to include $file_path";
+  } 
+  ?>
 
   <!-- Banner s textom -->
   <header class="banner text-white text-center d-flex align-items-center justify-content-center">
@@ -101,38 +82,19 @@
   </div>
 
   <!-- Footer -->
-  <footer class="bg-dark text-white py-4 mt-auto">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-md-4">
-          <h5>O stránke</h5>
-          <p>Stručné privítanie do sveta parkouru</p>
-        </div>
-        <div class="col-md-4">
-          <h5>Kontakt</h5>
-          <p>Email: <a href="mailto:parkour@mojastranka.sk" class="text-white">info@mojastranka.sk</a></p>
-          <p>Tel: <a href="tel:+421900123456" class="text-white">+421 900 123 456</a></p>
-        </div>
-        <div class="col-md-4">
-          <h5>Rýchle odkazy</h5>
-          <ul class="list-unstyled mb-0">
-            <li><a href="../gallery.html" class="text-white">Galéria</a></li>
-            <li><a href="../contacts.html" class="text-white">Kontakt</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="text-center mt-3">
-        <p class="mb-0">&copy; 2025 Richard Štefanka - Moja stránka</p>
-      </div>
-    </div>
-  </footer>
+  <?php
+  $file_path = "parts/footer.php"; 
+  if(!include($file_path)) {
+    echo"Failed to include $file_path";
+  } 
+  ?>
 
   <!-- kreatívny bod -->
   <!-- Cookie popup -->
   <div id="cookie-popup" class="cookie-popup">
     <div class="cookie-row">
       <div class="cookie-left">
-        <img src="../img/cookie.png" alt="Cookie" class="cookie-icon">
+        <img src="img/cookie.png" alt="Cookie" class="cookie-icon">
         <span class="cookie-label">cookies</span>
       </div>
       <div class="cookie-text">
@@ -147,6 +109,6 @@
 
   <!-- Bootstrap + JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
