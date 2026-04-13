@@ -27,33 +27,29 @@
   <section class="contacts-section py-5" id="contact">
     <div class="container">
       <h2 class="text-center mb-5 mt-5">Kontakt</h2>
-      <form id="contactForm" class="mx-auto" style="max-width: 500px" novalidate>
-        <div class="mb-3">
-          <label for="meno" class="form-label">Meno</label>
-          <input type="text" id="meno" class="form-control" placeholder="Zadajte svoje meno" required>
-          <div class="invalid-feedback">Prosím, zadajte svoje meno.</div>
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" id="email" class="form-control" placeholder="Zadajte svoj email" required>
-          <div class="invalid-feedback">Prosím, zadajte platnú emailovú adresu.</div>
-        </div>
-        <div class="mb-3">
-          <label for="sprava" class="form-label">Správa</label>
-          <textarea id="sprava" rows="4" class="form-control" placeholder="Vaša správa..." required></textarea>
-          <div class="invalid-feedback">Prosím, napíšte správu.</div>
-        </div>
-        <div class="form-check mb-3">
-          <input class="form-check-input" type="checkbox" id="suhlas" required>
-          <label class="form-check-label" for="suhlas">
-            Súhlasím so spracovaním osobných údajov
-          </label>
-          <div class="invalid-feedback">Musíte súhlasiť so spracovaním údajov.</div>
-        </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-dark px-4">Odoslať</button>
-        </div>
-      </form>
+        <form id="contactForm" class="mx-auto" style="max-width: 500px" method="POST" action="db/spracovanieFormulara.php" novalidate>
+          <div class="mb-3">
+            <label for="meno" class="form-label">Meno a priezvisko</label>
+            <input type="text" id="meno" name="meno" class="form-control" placeholder="Zadajte svoje meno a priezvisko" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Zadajte svoj email" required>
+          </div>
+          <div class="mb-3">
+            <label for="sprava" class="form-label">Správa</label>
+            <textarea id="sprava" name="sprava" rows="4" class="form-control" placeholder="Vaša správa..." required></textarea>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="suhlas" name="suhlas" required>
+            <label class="form-check-label" for="suhlas">
+              Súhlasím so spracovaním osobných údajov
+            </label>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-dark px-4">Odoslať</button>
+          </div>
+        </form>
     </div>
   </section>
 

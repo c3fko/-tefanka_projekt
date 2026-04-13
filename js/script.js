@@ -1,14 +1,11 @@
 // THANK YOU PAGE //
 (function () {
   const form = document.getElementById('contactForm');
-  if (form) { // iba ak existuje
+  if (form) {
     form.addEventListener('submit', function (event) {
       if (!form.checkValidity()) {
         event.preventDefault();
         event.stopPropagation();
-      } else {
-        event.preventDefault();
-        window.location.href = "thankyoupage.html";
       }
       form.classList.add('was-validated');
     }, false);
