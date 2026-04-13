@@ -14,14 +14,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Vlastné štýly -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Navigácia -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="../index.html">
-        <img src="../img/logo.png" alt="Logo stránky" width="40" height="40" class="me-2">
+      <a class="navbar-brand d-flex align-items-center" href="index.php">
+        <img src="img/logo.png" alt="Logo stránky" width="40" height="40" class="me-2">
         <span>Parkour & Freerunning</span>
       </a>
 
@@ -33,12 +33,12 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Domov</a></li>
-          <li class="nav-item"><a class="nav-link" href="../o_nas.html">O nás</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.php">Domov</a></li>
+          <li class="nav-item"><a class="nav-link" href="o_nas.php">O nás</a></li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../gallery.html">Galéria</a>
+            <a class="nav-link active" aria-current="page" href="gallery.php">Galéria</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="../contacts.html">Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.php">Kontakt</a></li>
         </ul>
       </div>
     </div>
@@ -50,13 +50,13 @@
     <div id="carouselExample" class="carousel slide mb-5 mx-auto" style="max-width: 600px;">
       <div class="carousel-inner rounded">
         <div class="carousel-item active">
-          <img src="../img/slide1.png" class="d-block w-100 rounded carousel-img" alt="Salto vzad">
+          <img src="img/slide1.png" class="d-block w-100 rounded carousel-img" alt="Salto vzad">
         </div>
         <div class="carousel-item">
-          <img src="../img/slide2.jpg" class="d-block w-100 rounded carousel-img" alt="Preskok cez prekážku">
+          <img src="img/slide2.jpg" class="d-block w-100 rounded carousel-img" alt="Preskok cez prekážku">
         </div>
         <div class="carousel-item">
-          <img src="../img/slide3.jpg" class="d-block w-100 rounded carousel-img" alt="Tri skákajúce osoby">
+          <img src="img/slide3.jpg" class="d-block w-100 rounded carousel-img" alt="Tri skákajúce osoby">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -94,8 +94,8 @@
         <div class="col-md-4">
           <h5>Rýchle odkazy</h5>
           <ul class="list-unstyled mb-0">
-            <li><a href="../gallery.html" class="text-white">Galéria</a></li>
-            <li><a href="../contacts.html" class="text-white">Kontakt</a></li>
+            <li><a href="gallery.php" class="text-white">Galéria</a></li>
+            <li><a href="contacts.php" class="text-white">Kontakt</a></li>
           </ul>
         </div>
       </div>
@@ -110,7 +110,7 @@
   <div id="cookie-popup" class="cookie-popup">
     <div class="cookie-row">
       <div class="cookie-left">
-        <img src="../img/cookie.png" alt="Cookie" class="cookie-icon">
+        <img src="img/cookie.png" alt="Cookie" class="cookie-icon">
         <span class="cookie-label">cookies</span>
       </div>
       <div class="cookie-text">
@@ -125,6 +125,6 @@
 
   <!-- Bootstrap + JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

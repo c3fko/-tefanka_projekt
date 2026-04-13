@@ -11,14 +11,14 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- Vlastné štýly -->
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <!-- Navigácia -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-      <a class="navbar-brand d-flex align-items-center" href="../index.html">
-        <img src="../img/logo.png" alt="Logo stránky" width="40" height="40" class="me-2">
+      <a class="navbar-brand d-flex align-items-center" href="index.php">
+        <img src="img/logo.png" alt="Logo stránky" width="40" height="40" class="me-2">
         <span>Parkour & Freerunning</span>
       </a>
 
@@ -30,12 +30,12 @@
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="../index.html">Domov</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.php">Domov</a></li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../o_nas.html">O nás</a>
+            <a class="nav-link active" aria-current="page" href="o_nas.php">O nás</a>
           </li>
-          <li class="nav-item"><a class="nav-link" href="../gallery.html">Galéria</a></li>
-          <li class="nav-item"><a class="nav-link" href="../contacts.html">Kontakt</a></li>
+          <li class="nav-item"><a class="nav-link" href="gallery.php">Galéria</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.php">Kontakt</a></li>
         </ul>
       </div>
     </div>
@@ -59,7 +59,7 @@
         </p>
       </div>
       <div class="col-md-6 text-center">
-        <img src="../img/comumunity.png" alt="Parkour komunita" class="img-fluid rounded w-75">
+        <img src="img/comumunity.png" alt="Parkour komunita" class="img-fluid rounded w-75">
       </div>
     </div>
     <div class="text-center mt-5 mb-5">
@@ -141,8 +141,8 @@
         <div class="col-md-4">
           <h5>Rýchle odkazy</h5>
           <ul class="list-unstyled mb-0">
-            <li><a href="../gallery.html" class="text-white">Galéria</a></li>
-            <li><a href="../contacts.html" class="text-white">Kontakt</a></li>
+            <li><a href="gallery.php" class="text-white">Galéria</a></li>
+            <li><a href="contacts.php" class="text-white">Kontakt</a></li>
           </ul>
         </div>
       </div>
@@ -157,7 +157,7 @@
   <div id="cookie-popup" class="cookie-popup">
     <div class="cookie-row">
       <div class="cookie-left">
-        <img src="../img/cookie.png" alt="Cookie" class="cookie-icon">
+        <img src="img/cookie.png" alt="Cookie" class="cookie-icon">
         <span class="cookie-label">cookies</span>
       </div>
       <div class="cookie-text">
@@ -172,6 +172,6 @@
 
   <!-- Bootstrap + JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="../js/script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
