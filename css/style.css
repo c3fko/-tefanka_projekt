@@ -1,0 +1,219 @@
+/* BODY */
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #a5a7a9;
+  color: #333;
+}
+
+h1, h2{
+  color: #ffffff;
+}
+
+/* KONTAKT */
+.contacts-section{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #a5a7a9;
+  color: #333;
+}
+
+/* BANNER */
+.banner{
+  background-image: url("../img/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 95vh;
+  position: relative;
+}
+
+.banner::before{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.banner .container{
+  position: relative;
+  z-index: 2;
+}
+
+/* AKORDEÓN */
+.custom-accordion{
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.custom-accordion .accordion-button{
+  background-color: rgb(42, 47, 52);
+  color: #fff;
+}
+
+.custom-accordion .accordion-button.collapsed{
+  background-color: rgba(33, 37, 41);
+  color: #fff;
+}
+
+.custom-accordion .accordion-body{
+  background-color: rgb(61, 68, 75);
+  color: #fff;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.custom-accordion .accordion-button:focus{
+  box-shadow: none
+}
+
+/* CITAT */
+blockquote p{
+  font-family: "Pinyon Script", cursive;
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* FOOTER */
+footer{
+  font-size: 0.9rem;
+}
+
+/* THANK YOU PAGE */
+.thankyou-container{
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+.thankyou-container img{
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+.thankyou-container h1{
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.thankyou-container p{
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* ALERT */
+.custom-alert{
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+/* SLIDESHOW */
+.carousel-img{
+  height: 400px;
+  object-fit: cover;
+}
+
+/* RIADKOVANIE */
+.big-line{
+  line-height: 2;
+}
+
+/* TABUĽKA */
+.custom-table{
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.custom-table thead th{
+  background-color: #212529;
+  color: #fff;
+}
+
+.custom-table tbody td{
+  background-color: rgb(61, 68, 75);
+  color: #fff;
+}
+
+.custom-table tbody tr:nth-child(odd) td{
+  background-color: rgb(80, 88, 95);
+}
+
+/* COOKIE POPUP */
+.cookie-popup{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: #212529;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: none;
+  z-index: 9999;
+}
+
+.cookie-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.cookie-left{
+  display: flex;
+  align-items: center;
+}
+
+.cookie-icon{
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.cookie-label{
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.cookie-text{
+  flex: 1;
+  text-align: center;
+}
+
+.cookie-buttons{
+  text-align: center;
+}
+
+.cookie-buttons button{
+  margin: 0 5px;
+}
+
+.btn-light-dark{
+  background-color: rgba(33, 37, 41, 0.7);
+  border-color: rgba(33, 37, 41, 0.7);
+  color: #fff;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#accept-cookies:hover{
+  background-color: #198754;
+}
+
+#reject-cookies:hover{
+  background-color: #dc3545;
+}
+
+/* RESPONZIVITA */
+  body{
+    padding-top: 4rem;
+  }
+  @media (max-width: 991.98px){
+    body{
+      padding-top: 3.5rem;
+    }
+  }
