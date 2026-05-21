@@ -31,55 +31,57 @@
   </header>
 
   <!-- Akordeón -->
-  <h2 class="text-center mt-5 mb-4">Často kladené otázky</h2>
-  <div class="accordion custom-accordion mx-auto" id="faqAccordion">
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingOne">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#q1" aria-expanded="false" aria-controls="q1">
-          Čo je to Parkour / Freerunning?
-        </button>
-      </h2>
-      <div id="q1" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Parkour je pohybová disciplína, pri ktorej sa človek snaží čo najplynulejšie a najpraktickejšie prekonávať prekážky – skákaním, preskokmi, lezením či behom, aby sa dostal z miesta na miesto rýchlo a kontrolovane.  
+  <?php
+include_once "classes/qna.php";
+use otazkyodpovede\QnA;
 
-          Freerunning je jeho „kreatívnejšia verzia“, kde sa k prekonávaniu prekážok pridáva akrobacia, estetika a osobitý štýl, takže pohyb vyzerá dynamicky a zaujímavo.
-        </div>
-      </div>
-    </div>
+$qna = new QnA();
+$qna->insertQnA(); 
+$faqs = $qna->getQnA();
+?>
 
-    <div class="accordion-item">
-      <h2 class="accordion-header" id="headingTwo">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q2" aria-expanded="false" aria-controls="q2">
-          Môžem sa tomu venovať aj ja?
-        </button>
-      </h2>
-      <div id="q2" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Áno, môžeš sa tomu venovať aj ty – parkour aj freerunning sú otvorené pre každého, bez ohľadu na vek či skúsenosti.  
+<h2 class="text-center mt-5 mb-4">Často kladené otázky</h2>
+<div class="accordion custom-accordion mx-auto" id="faqAccordion">
 
-          Stačí začať pomaly, učiť sa základné techniky (dopady, preskoky, balans) a postupne naberať silu aj istotu.  
+    <?php if (!empty($faqs)): ?>
+        <?php foreach ($faqs as $index => $faq): 
+            $isFirst = ($index === 0);
+            
+            $headingId = "heading" . $index;
+            $collapseId = "collapse" . $index;
+            
+            $isLast = ($index === count($faqs) - 1);
+        ?>
+            <div class="accordion-item <?php echo $isLast ? 'mb-5' : ''; ?>">
+                <h2 class="accordion-header" id="<?php echo $headingId; ?>">
+                    <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#<?php echo $collapseId; ?>" 
+                            aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" 
+                            aria-controls="<?php echo $collapseId; ?>">
+                        
+                        <?php echo htmlspecialchars($faq['otazka']); ?>
+                        
+                    </button>
+                </h2>
+                <div id="<?php echo $collapseId; ?>" 
+                     class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" 
+                     aria-labelledby="<?php echo $headingId; ?>" 
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        
+                        <?php echo htmlspecialchars($faq['odpoved']); ?>
+                        
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p class="text-center">Momentálne tu nie sú žiadne otázky.</p>
+    <?php endif; ?>
 
-          Je to o postupnom zlepšovaní, nie o tom urobiť saltá hneď prvý deň.
-        </div>
-      </div>
-    </div>
-
-    <div class="accordion-item mb-5">
-      <h2 class="accordion-header" id="headingThree">
-        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#q3" aria-expanded="false" aria-controls="q3">
-          Je to nebezpečné?
-        </button>
-      </h2>
-      <div id="q3" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-        <div class="accordion-body">
-          Áno aj nie. Parkour a freerunning môžu byť nebezpečné, ak sa robia bez rozumu, bez základov alebo sa skáče na úrovni, na ktorú človek ešte nemá.  
-
-          Ale ak začneš pomaly, trénuješ základné dopady, techniku a silu, vyberáš si primerané prekážky a postupuješ krok za krokom, úrazu sa báť nemusíš.
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
 
   <!-- Footer -->
   <?php
