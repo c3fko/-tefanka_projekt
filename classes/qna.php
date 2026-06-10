@@ -37,7 +37,6 @@ class QnA extends \Database {
             }
 
             $this->conn->commit();
-            echo "Dáta boli vložené";
 
         } catch (\Exception $e) {
             echo "Chyba pri vkladaní dát do databázy: " . $e->getMessage();
