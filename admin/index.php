@@ -1,14 +1,15 @@
 <?php
 session_start();
+
+require_once('../classes/Admin.php');
+use admin\Admin;
+
 if (isset($_SESSION['admin'])) {
     header('Location: dashboard.php');
     exit;
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once('../classes/Admin.php');
-    use admin\Admin;
-
     $admin = new Admin();
     if ($admin->prihlasit($_POST['heslo'])) {
         $_SESSION['admin'] = true;
@@ -32,8 +33,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (!empty($chyba)): ?>
       <div class="alert alert-danger"><?= htmlspecialchars($chyba) ?></div>
     <?php endif; ?>
-    <input type="password" name="heslo" class="form-control mb-3" placeholder="Heslo">
-    <button onclick="this.closest('form').submit()" class="btn btn-dark w-100">Prihlásiť sa</button>
+    <form method="POST">
+      <input type="password" name="heslo" class="form-control mb-3" placeholder="Heslo">
+      <button type="submit" class="btn btn-dark w-100">Prihlásiť sa</button>
+    </form>
   </div>
 </body>
 </html>
