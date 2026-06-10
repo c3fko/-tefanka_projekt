@@ -17,7 +17,7 @@ $kontakt = new Kontakt();
 $ulozene = $kontakt->ulozitSpravu($meno, $email, $sprava);
 
 if ($ulozene) {
-    header('Location: http://localhost/štefanka_projekt/thankyoupage.php');
+    header('Location: ../thankyoupage.php');
 } else {
     die('Chyba pri odosielaní správy do databázy!');
     http_response_code(404);

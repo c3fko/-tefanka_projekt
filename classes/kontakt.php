@@ -1,47 +1,39 @@
 <?php
 namespace formular;
-require_once('../db/config.php');
-use PDO;
+require_once(dirname(dirname(__FILE__)) . '/classes/databases.php');
 
-class Kontakt{
+class Kontakt extends \Database {
 
     private $conn;
 
     public function __construct() {
-        $this->connect();
+        parent::__construct();
+        $this->conn = $this->getConnection();
     }
 
-    private function connect() {
-        $config = DATABASE;
-
-        $options = array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        );
-
-        try {
-            $this->conn = new PDO('mysql:host=' . $config['HOST'] . ';dbname=' . $config['DBNAME'] . ';port=' . $config['PORT'], $config['USER_NAME'], $config['PASSWORD'], $options);
-        } catch (PDOException $e) {
-            die("Chyba pripojenia: " . $e->getMessage());
-        }
-    
+    public function ulozitSpravu(string $meno, string $email, string $sprava): bool {
+        $sql = "INSERT INTO formular (meno, email, sprava) VALUES (:meno, :email, :sprava)";
+        $statement = $this->conn->prepare($sql);
+        return $statement->execute([
+            ':meno'   => $meno,
+            ':email'  => $email,
+            ':sprava' => $sprava
+        ]);
     }
-    public function ulozitSpravu($meno, $email, $sprava) {
-    $sql = "INSERT INTO formular (meno, email, sprava) 
-            VALUE ('" . $meno . "', '" . $email . "', '" . $sprava . "')";
-    $statement = $this->conn->prepare($sql);
 
-    try {
-        $insert = $statement->execute();
-        header("Location: http://localhost/štefanka_projekt/thankyoupage.php");
-        http_response_code(200);
-        return $insert;
-    } catch (\Exception $exception) {
-        return http_response_code(404);
+    public function getSpravy(): array {
+        $statement = $this->conn->query("SELECT * FROM formular ORDER BY id DESC");
+        return $statement ? $statement->fetchAll(\PDO::FETCH_ASSOC) : [];
     }
-}
 
-    public function __destruct() {
-      $this->conn = null;
+    public function upravitSpravu(int $id, string $meno, string $email, string $sprava): bool {
+        $sql = "UPDATE formular SET meno=:meno, email=:email, sprava=:sprava WHERE id=:id";
+        $statement = $this->conn->prepare($sql);
+        return $statement->execute([':meno'=>$meno, ':email'=>$email, ':sprava'=>$sprava, ':id'=>$id]);
+    }
+
+    public function zmazatSpravu(int $id): bool {
+        $statement = $this->conn->prepare("DELETE FROM formular WHERE id = :id");
+        return $statement->execute([':id' => $id]);
     }
 }
