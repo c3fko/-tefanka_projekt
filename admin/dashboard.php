@@ -28,19 +28,25 @@ $spravy = $kontakt->getSpravy();
     <a href="logout.php" class="btn btn-outline-light">Odhlásiť sa</a>
   </div>
   <table class="table table-dark table-bordered">
-    <thead><tr><th>#</th><th>Meno</th><th>Email</th><th>Správa</th><th>Akcie</th></tr></thead>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Meno</th>
+        <th>Email</th>
+        <th>Správa</th>
+        <th>Akcie</th>
+      </tr>
+    </thead>
     <tbody>
     <?php foreach ($spravy as $s): ?>
       <tr>
-        <td><?= $s['id'] ?></td>
+        <td><?= $s['ID'] ?></td>
         <td><?= htmlspecialchars($s['meno']) ?></td>
         <td><?= htmlspecialchars($s['email']) ?></td>
         <td><?= htmlspecialchars($s['sprava']) ?></td>
         <td>
-          <a href="edit.php?id=<?= $s['id'] ?>" class="btn btn-warning btn-sm">Upraviť</a>
-          <a href="dashboard.php?delete=<?= $s['id'] ?>"
-             onclick="return confirm('Naozaj zmazať?')"
-             class="btn btn-danger btn-sm">Zmazať</a>
+          <a href="edit.php?id=<?= $s['ID'] ?>" class="btn btn-warning btn-sm">Upraviť</a>
+          <a href="dashboard.php?delete=<?= $s['ID'] ?>" onclick="return confirm('Naozaj zmazať?')" class="btn btn-danger btn-sm">Zmazať</a>
         </td>
       </tr>
     <?php endforeach; ?>

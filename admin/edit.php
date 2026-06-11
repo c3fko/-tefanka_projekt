@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $id = (int)$_GET['id'];
 $spravy = $kontakt->getSpravy();
 $sprava = null;
-foreach ($spravy as $s) { if ($s['id'] === $id) { $sprava = $s; break; } }
+foreach ($spravy as $s) { if ($s['ID'] === $id) { $sprava = $s; break; } }
 if (!$sprava) { header('Location: dashboard.php'); exit; }
 ?>
 <!DOCTYPE html>
@@ -30,7 +30,7 @@ if (!$sprava) { header('Location: dashboard.php'); exit; }
 <body class="bg-dark text-white p-4">
   <h2 class="mb-4">Upraviť správu</h2>
   <form method="POST" style="max-width:500px">
-    <input type="hidden" name="id" value="<?= $sprava['id'] ?>">
+    <input type="hidden" name="id" value="<?= $sprava['ID'] ?>">
     <div class="mb-3">
       <label>Meno</label>
       <input type="text" name="meno" class="form-control" value="<?= htmlspecialchars($sprava['meno']) ?>" required>
